@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boo Consulting | Privacy Health Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div class="app-container">
+        <header>
+            <img src="assets/NLS Logo.jpeg" alt="NLS Logo" class="logo">
+            <h1>Privacy Health Checker</h1>
+            <p>Assess your website's compliance posture in seconds.</p>
+        </header>
+
+        <section class="disclaimer-box">
+            <p><strong>Safety Notice:</strong> This tool audits publicly available data only. By entering a URL, you confirm this adheres to your internal AI policies. Results are for guidance only.</p>
+        </section>
+
+        <main class="audit-interface">
+            <div class="input-group">
+                <input type="url" id="websiteUrl" placeholder="https://www.yourwebsite.com" required>
+                <button onclick="runAudit()" id="auditBtn">Run Health Check</button>
+            </div>
+
+            <div id="resultsArea" class="hidden">
+                <div class="score-circle">
+                    <span id="healthScore">--</span>
+                    <small>/100</small>
+                </div>
+                
+                <div class="traffic-lights">
+                    <div class="light-item" id="statutory"><span>Statutory Info</span><div class="bulb"></div></div>
+                    <div class="light-item" id="privacy"><span>Privacy Notice</span><div class="bulb"></div></div>
+                    <div class="light-item" id="cookies"><span>Cookie Banner</span><div class="bulb"></div></div>
+                    <div class="light-item" id="minimisation"><span>Data Minimisation</span><div class="bulb"></div></div>
+                </div>
+
+                <div class="cta-box">
+                    <h3>Want the full expert report?</h3>
+                    <p>Your score indicates potential risks under the 2026 DUAA updates.</p>
+                    <a href="mailto:info@booconsulting.co.uk" class="cta-button">Speak to an Expert</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function runAudit() {
+            // This is a simulation for the UI. 
+            // In a live app, this would connect to an API.
+            const btn = document.getElementById('auditBtn');
+            btn.innerText = "Auditing...";
+            
+            setTimeout(() => {
+                document.getElementById('resultsArea').classList.remove('hidden');
+                document.getElementById('healthScore').innerText = "65";
+                btn.innerText = "Run Health Check";
+                // Add logic to toggle 'red/amber/green' classes here
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
