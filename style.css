@@ -1,42 +1,127 @@
+/* Import Brand Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap');
+
 :root {
-    --boo-blue: #009fe3;
-    --text: #2c3e50;
-    --bg: #f8f9fa;
-    --white: #ffffff;
-    --red: #e74c3c;
-    --amber: #f39c12;
-    --green: #2ecc71;
+    --boo-teal: #019192;
+    --boo-orange: #f39200;
+    --boo-yellow: #ffd477;
+    --boo-green: #70ad47;
+    --boo-dark: #212322;
+    --boo-light-gray: #54565a;
+    --boo-white: #ffffff;
+    --bg-fresh: #f4f7f6;
 }
 
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); display: flex; justify-content: center; padding: 50px 20px; }
+body { 
+    font-family: 'Source Sans 3', sans-serif; 
+    background-color: var(--bg-fresh); 
+    color: var(--boo-dark); 
+    display: flex; 
+    justify-content: center; 
+    padding: 40px 20px;
+    line-height: 1.5;
+}
 
-.app-container { background: var(--white); max-width: 600px; width: 100%; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; }
+h1, h3, #finalScore, button, .contact-btn, .score-box small {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
-.logo-placeholder { font-weight: bold; color: var(--boo-blue); letter-spacing: 1px; margin-bottom: 20px; text-transform: uppercase; }
+.app-container { 
+    background: var(--boo-white); 
+    max-width: 600px; 
+    width: 100%; 
+    padding: 40px; 
+    border-radius: 12px; 
+    box-shadow: 0 15px 35px rgba(33, 35, 34, 0.1); 
+    text-align: center; 
+    border-top: 6px solid var(--boo-teal);
+}
 
-h1 { font-size: 1.8rem; margin-bottom: 5px; color: #1a1a1a; }
-.subtitle { color: #7f8c8d; margin-bottom: 30px; }
+.logo-area { margin-bottom: 25px; }
+.main-logo { max-width: 280px; width: 100%; height: auto; }
 
-.safety-shield { background: #e8f4fd; border-left: 4px solid var(--boo-blue); padding: 15px; font-size: 0.85rem; text-align: left; margin-bottom: 30px; border-radius: 0 8px 8px 0; }
+h1 { font-size: 2.2rem; color: var(--boo-teal); margin-bottom: 5px; }
+.subtitle { color: var(--boo-light-gray); margin-bottom: 30px; font-size: 1.1rem; }
 
-.input-section { display: flex; gap: 10px; margin-bottom: 20px; }
-input { flex: 1; padding: 12px; border: 2px solid #ddd; border-radius: 6px; font-size: 1rem; }
-button { background: var(--boo-blue); color: white; border: none; padding: 12px 25px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+/* Safety Shield Branding */
+.safety-shield { 
+    background: #fff9ed; 
+    border-left: 5px solid var(--boo-yellow); 
+    padding: 15px; 
+    margin-bottom: 30px; 
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
 
-.score-box { width: 150px; height: 150px; border: 8px solid var(--boo-blue); border-radius: 50%; margin: 30px auto; display: flex; flex-direction: column; justify-content: center; align-items: center; }
-#finalScore { font-size: 3rem; font-weight: bold; line-height: 1; }
+.shield-mini { width: 40px; height: auto; }
+.safety-text p { font-size: 0.9rem; margin: 0; color: var(--boo-dark); }
 
-.report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
-.report-card { background: #fdfdfd; border: 1px solid #eee; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; }
+.input-section { display: flex; gap: 10px; margin-bottom: 25px; }
+input { 
+    flex: 1; 
+    padding: 14px; 
+    border: 2px solid #e1e1e1; 
+    border-radius: 8px; 
+    font-size: 1rem;
+    font-family: 'Source Sans 3', sans-serif;
+}
 
-.status-dot { width: 12px; height: 12px; border-radius: 50%; background: #ccc; }
-[data-status="red"] .status-dot { background: var(--red); }
-[data-status="amber"] .status-dot { background: var(--amber); }
-[data-status="green"] .status-dot { background: var(--green); }
+input:focus { border-color: var(--boo-teal); outline: none; }
 
-.action-footer { border-top: 1px solid #eee; padding-top: 25px; }
-.contact-btn { display: inline-block; background: var(--text); color: white; padding: 12px 30px; text-decoration: none; border-radius: 6px; margin-top: 15px; font-weight: bold; }
+button { 
+    background: var(--boo-orange); 
+    color: white; 
+    border: none; 
+    padding: 14px 25px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-weight: 700; 
+    font-size: 1.1rem;
+    transition: 0.2s;
+}
+
+button:hover { background: #d68100; transform: translateY(-1px); }
+
+.score-box { 
+    width: 170px; height: 170px; 
+    border: 10px solid var(--boo-teal); 
+    border-radius: 50%; 
+    margin: 30px auto; 
+    display: flex; flex-direction: column; justify-content: center; align-items: center; 
+}
+
+#finalScore { font-size: 4rem; color: var(--boo-teal); line-height: 1; }
+.score-box small { color: var(--boo-light-gray); margin-top: -5px; }
+
+.report-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 35px; }
+.report-card { 
+    background: white; border: 1px solid #eee; padding: 15px; border-radius: 8px; 
+    display: flex; justify-content: space-between; align-items: center; 
+    font-size: 0.85rem; font-weight: 600; color: var(--boo-light-gray);
+}
+
+.status-dot { width: 14px; height: 14px; border-radius: 50%; background: #ddd; }
+[data-status="red"] .status-dot { background: #e74c3c; } 
+[data-status="amber"] .status-dot { background: var(--boo-orange); } 
+[data-status="green"] .status-dot { background: var(--boo-green); } 
+
+.action-footer { border-top: 2px solid #f0f0f0; padding-top: 30px; }
+.contact-btn { 
+    display: inline-block; background: var(--boo-dark); color: white; 
+    padding: 14px 35px; text-decoration: none; border-radius: 8px; 
+    margin-top: 15px; font-weight: 700; font-size: 1.2rem;
+}
+
+.contact-btn:hover { background: var(--boo-teal); }
 
 .hidden { display: none; }
-.spinner { width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid var(--boo-blue); border-radius: 50%; animation: spin 1s linear infinite; margin: 20px auto; }
+.spinner { 
+    width: 45px; height: 45px; border: 4px solid #eee; border-top: 4px solid var(--boo-teal); 
+    border-radius: 50%; animation: spin 1s linear infinite; margin: 25px auto; 
+}
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
