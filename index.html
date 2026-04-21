@@ -3,64 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boo Consulting | Privacy Health Checker</title>
+    <title>SME Privacy Health Checker | Boo Consulting Concept</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="app-container">
         <header>
-            <img src="assets/NLS Logo.jpeg" alt="NLS Logo" class="logo">
+            <div class="logo-area">
+                <div class="logo-placeholder">Boo Consulting Concept</div>
+            </div>
             <h1>Privacy Health Checker</h1>
-            <p>Assess your website's compliance posture in seconds.</p>
+            <p class="subtitle">Instant 2026 UK Compliance Diagnostic</p>
         </header>
 
-        <section class="disclaimer-box">
-            <p><strong>Safety Notice:</strong> This tool audits publicly available data only. By entering a URL, you confirm this adheres to your internal AI policies. Results are for guidance only.</p>
+        <section class="safety-shield">
+            <p><strong>Safety Protocol:</strong> This tool performs a non-intrusive scan of <u>publicly available</u> metadata and footer information only. It does not access internal servers or private documents.</p>
         </section>
 
-        <main class="audit-interface">
-            <div class="input-group">
-                <input type="url" id="websiteUrl" placeholder="https://www.yourwebsite.com" required>
-                <button onclick="runAudit()" id="auditBtn">Run Health Check</button>
+        <div class="input-section">
+            <input type="url" id="targetUrl" placeholder="Enter website URL (e.g., https://example.com)">
+            <button onclick="startAudit()" id="runBtn">Run Diagnostic</button>
+        </div>
+
+        <div id="loader" class="hidden">
+            <div class="spinner"></div>
+            <p>Analyzing public compliance markers...</p>
+        </div>
+
+        <div id="results" class="hidden">
+            <div class="score-box">
+                <span id="finalScore">0</span>
+                <small>Health Score</small>
             </div>
 
-            <div id="resultsArea" class="hidden">
-                <div class="score-circle">
-                    <span id="healthScore">--</span>
-                    <small>/100</small>
+            <div class="report-grid">
+                <div class="report-card" data-status="amber">
+                    <span class="label">Statutory Disclosures</span>
+                    <div class="status-dot"></div>
                 </div>
-                
-                <div class="traffic-lights">
-                    <div class="light-item" id="statutory"><span>Statutory Info</span><div class="bulb"></div></div>
-                    <div class="light-item" id="privacy"><span>Privacy Notice</span><div class="bulb"></div></div>
-                    <div class="light-item" id="cookies"><span>Cookie Banner</span><div class="bulb"></div></div>
-                    <div class="light-item" id="minimisation"><span>Data Minimisation</span><div class="bulb"></div></div>
+                <div class="report-card" data-status="red">
+                    <span class="label">Privacy Policy (2026 Rules)</span>
+                    <div class="status-dot"></div>
                 </div>
-
-                <div class="cta-box">
-                    <h3>Want the full expert report?</h3>
-                    <p>Your score indicates potential risks under the 2026 DUAA updates.</p>
-                    <a href="mailto:info@booconsulting.co.uk" class="cta-button">Speak to an Expert</a>
+                <div class="report-card" data-status="green">
+                    <span class="label">Cookie Transparency</span>
+                    <div class="status-dot"></div>
+                </div>
+                <div class="report-card" data-status="green">
+                    <span class="label">Data Minimisation</span>
+                    <div class="status-dot"></div>
                 </div>
             </div>
-        </main>
+
+            <div class="action-footer">
+                <h3>Action Required</h3>
+                <p>Your site appears to be missing mandatory 2026 complaint-handling language.</p>
+                <a href="mailto:info@booconsulting.co.uk" class="contact-btn">Speak to an Expert</a>
+            </div>
+        </div>
     </div>
-
-    <script>
-        function runAudit() {
-            // This is a simulation for the UI. 
-            // In a live app, this would connect to an API.
-            const btn = document.getElementById('auditBtn');
-            btn.innerText = "Auditing...";
-            
-            setTimeout(() => {
-                document.getElementById('resultsArea').classList.remove('hidden');
-                document.getElementById('healthScore').innerText = "65";
-                btn.innerText = "Run Health Check";
-                // Add logic to toggle 'red/amber/green' classes here
-            }, 2000);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
